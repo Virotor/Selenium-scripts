@@ -187,3 +187,5 @@ INFO: Schema "PUBLIC" is up to date. No migration necessary.
 2023.09.28 22:38:04 INFO  time: initialize in 1.28s
 2023.09.28 22:38:08 WARN  Build server is not auto-connectable.
 2023.09.28 22:38:08 WARN  no build tool detected in workspace 'C:\Users\I will fight\Desktop\Selenium scripts'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. 
+сент. 28, 2023 10:38:19 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFO: Unsupported notification method: $/setTrace

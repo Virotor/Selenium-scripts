@@ -13,7 +13,7 @@ def findButtonByName (list : [], stringButtonName : str):
                 return elem
     return None     
 
-def findElementsResult(list : [], stringNameElement : str):
+def checkResultElement(list : [], stringNameElement : str):
 
     if(len(list) == 0):
         raise Exception("List is empty")
@@ -34,8 +34,7 @@ def calculateCredit(mouthsCount : float, desiredSum : float, interestRate : floa
 
 
 
-
-
+    
 
 driver = webdriver.Chrome()
 
@@ -46,8 +45,8 @@ driver.get("https://testing.bsuir.by/calculatorkreditov/")
 time.sleep(1)
 
 
-mounthsCount = 10
-desiredSum = 100000
+mounthsCount = 20
+desiredSum = 10000
 interestRate = 10
 
 textAreaSum= driver.find_element(By.ID, "desiredSum")
@@ -80,19 +79,19 @@ except Exception as error:
     exit()
 
 
-resultMounth = str(calculateResult[1])
-totalResult = str(calculateResult[0])
+resultMounth = round(calculateResult[1], 3)
+totalResult = round(calculateResult[0], 3)
 
 
-if(findElementsResult(
+if(checkResultElement(
     driver.find_elements(
         By.TAG_NAME, "div"),
-        'Calculate\nMonthly charge:\n'+ resultMounth[:resultMounth.find('.')+4] + '\nTotal sum:\n'+ totalResult[:totalResult.find('.')+4])
+        'Calculate\nMonthly charge:\n'+ str(resultMounth) + '\nTotal sum:\n'+ str(totalResult))
     ):
     print("Проверка прошла успешно")
 else:
     print("Проверка прошла неуспешно")    
-time.sleep(10)
+time.sleep(1)
 driver.quit()
 
    
